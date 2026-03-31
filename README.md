@@ -123,4 +123,3 @@ or workload where you would actually choose to deploy it — a web server, an
 interactive desktop, an embedded controller, a batch processing cluster. What
 does the diversity of good answers tell us about our job as operating system
 authors?
-# hawx-scheduler
