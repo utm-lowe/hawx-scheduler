@@ -48,6 +48,7 @@ start()
   int id = r_mhartid();
   w_tp(id);
 
+
   // switch to supervisor mode and jump to main().
   asm volatile("mret");
 }
@@ -64,6 +65,9 @@ timerinit()
 {
   // each CPU has a separate source of timer interrupts.
   int id = r_mhartid();
+
+  // allow the counter to be read in supervisor mode
+  w_mcounteren(r_mcounteren() | 2);
 
   // ask the CLINT for a timer interrupt.
   int interval = 100000; // cycles; about 1/10th second in qemu.
